@@ -1,0 +1,175 @@
+🔐 1. Account problemen
+User kan niet inloggen
+Account locked
+Verkeerde rechten
+
+👉 Wat jij doet:
+
+Check lusrmgr.msc
+Unlock account
+Reset password
+Rechten fixen
+
+
+
+📡 2. Netwerk / verbinding issues
+Geen internet
+Server niet bereikbaar
+RDP werkt niet
+
+👉 Wat jij doet:
+
+ipconfig /all
+Check IP / gateway
+Ping testen
+Firewall checken
+
+
+
+🧱 3. Firewall blokkeert dingen
+Service werkt niet
+Poort dicht
+
+👉 Wat jij doet:
+
+Firewall rules checken
+Juiste poort openen
+
+
+
+💻 4. Services werken niet
+Website down
+Database stopt
+
+👉 Wat jij doet:
+
+services.msc
+Service starten/herstarten
+Startup type op Automatic
+
+
+
+🧪 5. Updates / errors
+Systeem werkt raar
+Bugs / crashes
+
+👉 Wat jij doet:
+
+Windows Update uitvoeren
+Event Viewer checken
+
+
+
+📜 6. Logs analyseren
+
+👉 SUPER belangrijk in W2
+
+Tool:
+
+eventvwr
+
+Wat zoeken:
+
+Errors
+Failed logins
+Warnings
+
+👉 Dit helpt je de oorzaak vinden
+
+
+
+
+🛡️ 7. Security incidenten
+
+Bijv:
+
+Verdachte login
+Malware
+Onbekende user
+
+👉 Wat jij doet:
+
+Account uitschakelen
+Wachtwoord resetten
+Defender scan draaien
+
+
+
+📂 8. Permissions problemen
+User kan niet bij bestanden
+Of juist te veel toegang
+
+👉 Wat jij doet:
+
+NTFS rechten aanpassen
+
+
+
+🔑 9. RDP problemen
+Kan niet verbinden
+
+👉 Check:
+
+Staat RDP aan?
+Firewall open?
+User rechten?
+🧠 Belangrijk verschil met W1
+W1	W2
+Preventie	Probleem oplossen
+Audit	Incident
+Advies	Actie
+
+
+
+⚡ Hoe je W2 aanpakt (stappenplan)
+🥇 Stap 1: Begrijp het probleem
+Lees opdracht goed
+Wat werkt niet?
+
+
+
+🥈 Stap 2: Diagnose
+
+Gebruik tools:
+
+ipconfig
+ping
+eventvwr
+services.msc
+
+
+
+🥉 Stap 3: Fix
+Instellingen aanpassen
+Services starten
+Rechten corrigeren
+
+
+
+
+📝 Stap 4: Rapporteren
+
+Altijd beschrijven:
+
+Probleem
+Oorzaak
+Oplossing
+
+
+
+🧠 Voorbeeld zin (heel belangrijk)
+
+👉 Gebruik dit in je examen:
+
+“Het probleem werd veroorzaakt door … Dit heb ik vastgesteld door … Vervolgens heb ik … aangepast, waardoor het probleem is opgelost.”
+
+🚀 Pro-tip (docent wil dit zien)
+Niet gokken ❌
+Altijd onderbouwen ✔
+Logs gebruiken ✔
+🔥 Meest voorkomende W2 taken (onthouden!)
+Account unlocken
+Firewall fixen
+Service starten
+IP probleem oplossen
+Logs lezen
