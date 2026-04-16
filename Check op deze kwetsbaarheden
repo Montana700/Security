@@ -1,0 +1,245 @@
+🔍 1. Open poorten / onnodige services
+
+Probleem: Poorten staan open (bijv. FTP, RDP) die niet nodig zijn
+Waarom gevaarlijk:
+
+Hackers kunnen binnenkomen via die service
+Elke open poort = extra aanvalsvlak
+
+Advies:
+Sluit alle onnodige poorten
+Gebruik een firewall (alleen noodzakelijke poorten open)
+Principle of least privilege toepassen
+
+
+
+🔐 2. Zwakke wachtwoorden
+
+Probleem: Simpele wachtwoorden (Welkom123)
+Waarom gevaarlijk:
+
+Makkelijk te raden (brute force / dictionary attack)
+
+Advies:
+Minimaal 12 karakters
+Complexiteit eisen (hoofdletters, cijfers, symbolen)
+Password policy instellen
+Eventueel MFA toevoegen
+
+
+
+🔓 3. Geen account lockout
+
+Probleem: Onbeperkt inloggen proberen
+Waarom gevaarlijk:
+
+Brute force wordt makkelijk
+Advies:
+
+Account blokkeren na bijv. 5 pogingen
+Tijdelijke lockout (bijv. 15 min)
+
+
+
+👤 4. Default accounts
+
+Probleem: Standaard login (admin/admin)
+Waarom gevaarlijk:
+
+Bekend bij iedereen → eerste wat hackers proberen
+
+Advies:
+Verwijderen of hernoemen
+Sterk wachtwoord instellen
+
+
+
+🌐 5. Geen HTTPS
+
+Probleem: Website gebruikt HTTP
+Waarom gevaarlijk:
+
+Data (wachtwoorden!) kan worden onderschept
+
+Advies:
+SSL/TLS certificaat installeren
+HTTP → HTTPS redirect instellen
+
+
+
+💉 6. SQL Injection
+
+Probleem: Input wordt niet gefilterd
+Waarom gevaarlijk:
+
+Database kan worden uitgelezen of aangepast
+
+Advies:
+Prepared statements gebruiken
+Input validatie
+Web Application Firewall (WAF)
+
+
+
+⚠️ 7. XSS (Cross-Site Scripting)
+
+Probleem: Gebruiker kan scripts invoeren
+Waarom gevaarlijk:
+
+Cookies stelen
+Gebruikers overnemen
+
+Advies:
+Input escapen
+Content Security Policy (CSP)
+
+
+
+⚙️ 8. Verouderde software
+
+Probleem: Oude versies draaien
+Waarom gevaarlijk:
+
+Bekende kwetsbaarheden (CVE’s)
+
+Advies:
+Regelmatig updaten
+Patch management
+
+
+
+🧱 9. Slechte rechten (permissions)
+
+Probleem: Iedereen heeft toegang
+Waarom gevaarlijk:
+
+Data kan worden aangepast/verwijderd
+
+Advies:
+Least privilege toepassen
+Alleen toegang geven wat nodig is
+
+
+
+📂 10. Gevoelige bestanden zichtbaar
+
+Probleem: config/password bestanden toegankelijk
+Waarom gevaarlijk:
+
+Direct toegang tot systemen
+
+Advies:
+Verplaatsen buiten webroot
+Toegang beperken
+
+
+
+🔥 11. Firewall ontbreekt / slecht ingesteld
+
+Probleem: Geen filtering
+Waarom gevaarlijk:
+
+Iedereen kan alles bereiken
+
+Advies:
+Firewall inschakelen
+Alleen noodzakelijke poorten open
+Logging aanzetten
+
+
+
+🧪 12. Geen updates / patching
+
+Probleem: Systemen niet bijgewerkt
+Waarom gevaarlijk:
+
+Bekende exploits werken nog
+
+Advies:
+Automatische updates
+Regelmatig controleren
+
+
+
+📜 13. Geen logging
+
+Probleem: Activiteit wordt niet opgeslagen
+Waarom gevaarlijk:
+
+Aanvallen blijven onzichtbaar
+
+Advies:
+Logging inschakelen
+Logs regelmatig controleren
+
+
+
+👥 14. Te veel admin accounts
+
+Probleem: Veel mensen hebben admin rechten
+Waarom gevaarlijk:
+
+Groter risico op misbruik
+
+Advies:
+Minimaal aantal admins
+Rollen scheiden
+
+
+
+🧠 15. Oude / ongebruikte accounts
+
+Probleem: Accounts blijven bestaan
+Waarom gevaarlijk:
+
+Kunnen misbruikt worden
+
+Advies:
+Accounts verwijderen of uitschakelen
+Periodieke controle
+
+
+
+🔒 16. Geen encryptie
+
+Probleem: Data in plain text
+Waarom gevaarlijk:
+
+Data kan worden gelezen bij onderschepping
+
+Advies:
+Encryptie gebruiken (TLS, disk encryption)
+
+
+
+📡 17. Onveilige protocollen (Telnet, FTP)
+
+Probleem: Geen encryptie
+Waarom gevaarlijk:
+
+Wachtwoorden zichtbaar
+
+Advies:
+Gebruik SSH i.p.v. Telnet
+Gebruik SFTP/FTPS i.p.v. FTP
+
+
+
+🧠 Belangrijk voor je examen
+
+Als je dit onthoudt, scoor je bijna altijd goed:
+
+👉 Elke kwetsbaarheid =
+
+risico uitleggen (wat kan er gebeuren?)
+impact benoemen (data verlies? hack?)
+concrete oplossing geven
+⚡ Pro-tip (docent-truc)
+
+Gebruik zinnen zoals:
+
+“Dit vormt een risico omdat…”
+“Een aanvaller kan hierdoor…”
+“Om dit te mitigeren adviseer ik…”
+
+👉 Dat levert extra punten op.
