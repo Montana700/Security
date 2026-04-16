@@ -1,0 +1,95 @@
+🌐 Netwerk troubleshooting
+📡 IP + netwerk info
+ipconfig /all
+
+👉 Check:
+IP-adres
+Default gateway
+DNS
+DHCP aan/uit
+
+
+
+🔄 Netwerk reset
+ipconfig /release
+ipconfig /renew
+
+👉 Gebruik bij:
+geen internet
+verkeerde IP
+
+
+
+🧪 Connectiviteit testen
+ping 8.8.8.8
+ping <server-ip>
+
+👉 Check:
+internet werkt?
+server bereikbaar?
+
+
+
+🛣️ Route checken
+tracert 8.8.8.8
+👉 Laat zien waar verbinding stopt
+
+
+
+🌐 DNS testen
+nslookup google.com
+👉 DNS probleem opsporen
+
+
+
+🔐 🔍 Security / accounts
+👤 Users overzicht
+net user
+
+
+
+👥 Groepen bekijken
+net localgroup administrators
+
+👉 Check:
+wie is admin?
+
+
+🔓 Account info
+net user username
+
+👉 Check:
+laatste login
+status account
+
+
+
+🧱 🔥 Firewall & poorten
+📡 Open poorten bekijken
+netstat -ano
+
+👉 Belangrijk:
+LISTENING = open poort
+PID = welk programma
+
+
+
+🔍 PID koppelen aan proces
+tasklist | findstr <PID>
+👉 Hiermee zie je:
+welke app poort gebruikt
+
+
+⚙️ 💻 Processen & performance
+🧠 actieve processen
+tasklist
+
+
+❌ proces stoppen
+taskkill /PID <id> /F
+
+
+👉 Gebruik bij:
+
+malware
+vastgelopen apps
