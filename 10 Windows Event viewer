@@ -1,0 +1,173 @@
+🔐 Windows Security Event IDs (BELANGRIJKSTE)
+👤 Login events (heel belangrijk)
+✅ 4624 – Successful logon
+
+👉 Iemand is succesvol ingelogd
+
+Kan lokaal of remote zijn
+Check altijd “Logon Type” + IP
+
+Waarom belangrijk:
+Kan normale login zijn, maar ook gehackte toegang
+
+❌ 4625 – Failed logon
+
+👉 Inlogpoging mislukt
+
+Waarom belangrijk:
+
+Brute force aanval
+Fout wachtwoord
+Hackpoging
+🚪 4634 – Logoff
+
+👉 User is uitgelogd
+
+🔑 4648 – Logon with explicit credentials
+
+👉 Login met handmatig ingevoerde credentials
+
+Waarom belangrijk:
+
+Kan credential theft of scriptgebruik zijn
+👑 4672 – Special privileges assigned
+
+👉 Admin account ingelogd
+
+Waarom belangrijk:
+
+Hoge rechten activiteit
+Extra controle nodig
+
+
+
+🚨 2. Account & security wijzigingen
+🔐 4720 – User created
+
+👉 Nieuwe gebruiker aangemaakt
+
+Risico:
+
+Hacker maakt backdoor account
+🗑️ 4726 – User deleted
+
+👉 Gebruiker verwijderd
+
+Risico:
+
+Sporen wissen
+🔑 4723 – Password change attempt
+
+👉 Wachtwoord wijziging geprobeerd
+
+🔓 4724 – Password reset
+
+👉 Wachtwoord is gereset
+
+👥 4732 – User added to group
+
+👉 User toegevoegd aan admin groep
+
+ZEER BELANGRIJK
+
+
+
+
+🧱 3. Logon types (super belangrijk bij 4624)
+
+Bij Event ID 4624 kijk je altijd naar “Logon Type”:
+
+Type	Betekenis
+2	Local login (fysiek)
+3	Network access (shares)
+5	Service login
+7	Unlock workstation
+10	Remote Desktop (RDP)
+11	Cached login
+
+👉 EXAMEN TIP:
+
+Type 10 + onbekend IP = verdacht
+Type 3 + onbekende share = mogelijk datalek
+🌐 4. Network / system events
+⚙️ 7036 – Service started/stopped
+
+👉 Service status wijziging
+
+Waarom belangrijk:
+
+Kan crash of aanval zijn
+⚠️ 7045 – New service installed
+
+👉 Nieuwe service geïnstalleerd
+
+ZEER BELANGRIJK (malware indicator)
+
+
+
+
+💻 5. System errors
+❌ 1000 – Application crash
+
+👉 Programma is gecrasht
+
+⚠️ 41 – System reboot without clean shutdown
+
+👉 PC is onverwacht herstart
+
+Waarom belangrijk:
+
+Crash
+Malware
+stroomuitval
+
+
+
+🔥 6. Security attack patterns (EXAMEN TOP)
+🚨 Brute force aanval
+
+Je ziet:
+
+4625 (veel achter elkaar)
+
+👉 Conclusie:
+
+Wachtwoordaanval / brute force
+
+🚨 Verdachte login
+
+Je ziet:
+
+4624
+Logon Type 10
+vreemd IP
+
+👉 Conclusie:
+
+Mogelijke ongeautoriseerde remote toegang
+
+🚨 Privilege escalation
+
+Je ziet:
+
+4732 (user → admin group)
+
+👉 Conclusie:
+
+Iemand heeft admin rechten gekregen (risico!)
+
+🧠 HOE JE DIT SCHRIJFT IN JE EXAMEN
+
+Gebruik deze structuur:
+
+“In Event Viewer is Event ID 4624 gevonden met Logon Type 10 vanaf een onbekend IP-adres. Dit duidt op een succesvolle remote login die mogelijk ongeautoriseerd is. Ik adviseer het account te controleren en toegang te beperken.”
+
+⚡ ULTRA BELANGRIJKE 5 (leren!)
+
+Als je maar weinig tijd hebt, leer deze:
+
+4624 → login
+4625 → failed login
+4672 → admin login
+4720 → user created
+7045 → new service (malware indicator)
