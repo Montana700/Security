@@ -1,0 +1,103 @@
+📁 1. Services
+services.msc
+
+👉 Check:
+
+wat draait
+wat is gestopt
+malware services (rare namen)
+
+
+
+
+👤 2. Local users & groups
+lusrmgr.msc
+
+
+
+
+🧱 3. Task Scheduler (vaak vergeten!)
+taskschd.msc
+
+👉 Waarom belangrijk:
+
+malware plant taken
+scripts die automatisch starten
+
+
+
+
+📂 4. Startup programs
+
+👉 Taakbeheer → Startup tab
+
+👉 Check:
+
+rare onbekende programma’s
+auto-start malware
+
+
+
+
+🧪 5. Control Panel / Settings (basis checks)
+Windows Update
+Firewall
+BitLocker
+Remote Desktop
+
+
+
+
+📊 6. Resource Monitor
+resmon
+
+👉 Check:
+
+CPU usage
+netwerk verbindingen per proces
+
+
+🚨 Wat docenten vaak “verborgen” testen
+1. Verdachte startup
+
+→ malware start automatisch
+
+2. Open poort + onbekend proces
+
+→ Nmap + netstat combineren
+
+3. Logins vanaf vreemd IP
+
+→ Event Viewer + 4624
+
+4. Service die zichzelf installeert
+
+→ 7045 event
+
+
+
+🧠 ULTIEME EXAMEN COMBI (BELANGRIJK)
+
+Als je echt slim werkt, combineer je tools:
+
+👉 Nmap → open poort
+👉 netstat → proces
+👉 tasklist → verdachte app
+👉 Event Viewer → login logs
+👉 services.msc → persistence
+
+
+
+
+⚡ MINI MEMORY TRICK
+
+Onthoud deze 6:
+
+👉 IP / NET / USER / PORT / LOG / SERVICE
+
+IP → ipconfig
+NET → ping / tracert
+USER → net user
+PORT → netstat
+LOG → eventvwr
+SERVICE → services.msc
