@@ -1,0 +1,210 @@
+👤 1. Account is geblokkeerd
+
+⚙️ Hoe doe je het:
+
+Windows + R → lusrmgr.msc
+Users → dubbelklik user
+Vink Account is locked out uit
+OF:
+net user username /active:yes
+
+❗ Waarom:
+
+Te veel verkeerde loginpogingen (beveiliging tegen brute force)
+
+📝 Wat schrijf je:
+
+Account was geblokkeerd door meerdere mislukte inlogpogingen. Dit is hersteld door het account te deblokkeren. Ik adviseer lockout policy en MFA te gebruiken.
+
+
+
+
+🔐 2. Wachtwoord resetten
+
+⚙️ Hoe:
+
+net user username NieuwWachtwoord123!
+
+OF lusrmgr.msc → user → Set Password
+
+❗ Waarom:
+
+User vergeten wachtwoord of account compromise
+
+📝 Schrijven:
+
+Wachtwoord is gereset omdat de gebruiker geen toegang meer had. Ik adviseer een sterk wachtwoordbeleid en password manager.
+
+
+
+
+📡 3. Geen internet / netwerk werkt niet
+
+⚙️ Hoe:
+
+ipconfig /all
+ping 8.8.8.8
+ipconfig /renew
+
+❗ Waarom:
+
+DHCP probleem of verkeerde IP-configuratie
+
+📝 Schrijven:
+
+Netwerkprobleem veroorzaakt door verkeerde IP-configuratie. DHCP lease vernieuwd en verbinding hersteld.
+
+
+
+
+🧱 4. Firewall blokkeert
+
+⚙️ Hoe:
+
+Open Windows Defender Firewall
+Advanced settings
+Inbound Rules → enable rule of nieuwe maken
+
+❗ Waarom:
+
+Firewall blokkeert poort of service
+
+📝 Schrijven:
+
+Firewall blokkeerde de verbinding. Regel is aangepast om verkeer toe te staan voor de benodigde service.
+
+
+
+
+💻 5. Service werkt niet
+
+⚙️ Hoe:
+
+services.msc
+service → Start / Restart
+Startup type → Automatic
+
+❗ Waarom:
+
+Service gestopt of crash
+
+📝 Schrijven:
+
+De service was gestopt waardoor de applicatie niet werkte. Service opnieuw gestart en ingesteld op automatisch starten.
+
+
+
+
+📜 6. Logs checken
+
+⚙️ Hoe:
+
+eventvwr
+Windows Logs → System / Security
+
+❗ Waarom:
+
+Logs geven oorzaak van probleem
+
+📝 Schrijven:
+
+In Event Viewer is een foutmelding gevonden die de oorzaak van het probleem aangeeft. Dit is gebruikt om het probleem op te lossen.
+
+
+
+
+🛡️ 7. Verdachte activiteit
+
+⚙️ Hoe:
+
+net user username /active:no
+Windows Security → Full scan
+
+❗ Waarom:
+
+Mogelijke malware of gehackt account
+
+📝 Schrijven:
+
+Verdacht account is uitgeschakeld en een malware scan is uitgevoerd. Dit om verdere schade te voorkomen.
+
+
+
+
+📂 8. Geen toegang tot bestanden
+
+⚙️ Hoe:
+
+Map → Properties → Security → Edit
+Rechten aanpassen
+
+❗ Waarom:
+
+NTFS permissions fout
+
+📝 Schrijven:
+
+Gebruiker had geen juiste rechten op de map. Rechten zijn aangepast volgens least privilege principe.
+
+
+
+
+🔑 9. RDP werkt niet
+
+⚙️ Hoe:
+
+Settings → System → Remote Desktop → ON
+Firewall check
+User toevoegen
+
+❗ Waarom:
+
+RDP uit of geblokkeerd
+
+📝 Schrijven:
+
+Remote Desktop stond uit of werd geblokkeerd door firewall. Instellingen zijn aangepast en toegang hersteld.
+
+
+
+
+🧪 10. Updates ontbreken
+
+⚙️ Hoe:
+
+Settings → Windows Update → Check updates
+
+❗ Waarom:
+
+Verouderd systeem → risico
+
+📝 Schrijven:
+
+Systeem was niet bijgewerkt waardoor kwetsbaarheden aanwezig waren. Updates zijn geïnstalleerd.
+
+
+
+
+🧠 BELANGRIJK PATROON (voor ALLES)
+
+Gebruik altijd deze 3 stappen:
+
+1. 🔍 Probleem
+
+Wat werkt niet?
+
+2. ⚙️ Actie
+
+Wat heb je gedaan?
+
+3. 📝 Uitleg
+
+Waarom was het fout + oplossing
+
+⚡ EXAMEN TRUC (SUPER BELANGRIJK)
+
+Schrijf altijd:
+
+👉 “Ik heb dit gecontroleerd via …”
+👉 “Dit wees uit dat …”
+👉 “Daarna heb ik … aangepast”
