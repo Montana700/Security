@@ -1,0 +1,190 @@
+🪟 1. Wachtwoordbeleid (Password Policy)
+🔍 Navigeren:
+Druk op Windows + R
+Typ: secpol.msc
+Ga naar:
+→ Account Policies
+→ Password Policy
+⚙️ Instellen:
+Minimum password length → bijv. 12
+Password must meet complexity requirements → Enable
+Maximum password age → bijv. 90 dagen
+
+
+
+🔒 2. Account lockout policy
+🔍 Navigeren:
+
+secpol.msc →
+→ Account Policies
+→ Account Lockout Policy
+
+⚙️ Instellen:
+Account lockout threshold → 5
+Lockout duration → 15 minuten
+Reset counter → 15 minuten
+
+
+
+👤 3. Lokale gebruikers & groepen
+🔍 Navigeren:
+Windows + R
+Typ: lusrmgr.msc
+⚙️ Acties:
+Ga naar Users
+Rechtermuisknop:
+Verwijder oude accounts
+Zet Guest → Disable
+Ga naar Groups → Administrators
+Verwijder onnodige admins
+
+
+
+🧱 4. Windows Firewall
+🔍 Navigeren:
+Startmenu → zoek: Firewall
+Open: Windows Defender Firewall
+⚙️ Instellen:
+Klik: Turn Windows Defender Firewall on or off
+Zet alles op On
+🔧 Geavanceerd:
+Klik: Advanced settings
+Check Inbound Rules
+Verwijder/disable onnodige regels
+
+
+
+📡 5. Open poorten / services
+🔍 Checken:
+
+Open CMD:
+
+netstat -ano
+
+Of:
+
+services.msc
+⚙️ Acties:
+Zoek onnodige services
+Dubbelklik → Startup type → Disabled
+
+
+
+🧪 6. Windows Updates
+🔍 Navigeren:
+Instellingen → Windows Update
+⚙️ Acties:
+Klik: Check for updates
+Zet automatische updates aan
+
+
+
+📂 7. NTFS permissies
+🔍 Navigeren:
+Rechtermuisknop op map
+Properties → Security
+⚙️ Acties:
+Klik: Edit
+Verwijder:
+“Everyone”
+Geef alleen juiste users toegang
+
+
+
+📁 8. Shares (gedeelde mappen)
+🔍 Navigeren:
+
+CMD:
+
+net share
+
+Of:
+
+Rechtermuisknop map → Properties → Sharing
+⚙️ Acties:
+Klik: Advanced Sharing
+Beperk toegang (Permissions)
+
+
+
+🔐 9. BitLocker
+🔍 Navigeren:
+Configuratiescherm → BitLocker Drive Encryption
+⚙️ Acties:
+Klik: Turn on BitLocker
+Volg wizard
+
+
+
+📜 10. Logging (Event Viewer)
+🔍 Navigeren:
+Windows + R
+Typ: eventvwr
+⚙️ Check:
+Windows Logs → Security
+Kijk naar:
+failed logins
+errors
+
+
+
+🧠 11. UAC (User Account Control)
+🔍 Navigeren:
+Start → zoek: UAC
+⚙️ Instellen:
+Zet slider op minimaal:
+“Notify me when apps try to make changes”
+
+
+
+💻 12. Remote Desktop (RDP)
+🔍 Navigeren:
+Instellingen → System → Remote Desktop
+⚙️ Acties:
+Zet uit als niet nodig
+OF
+Klik: Advanced settings
+Zet Network Level Authentication aan
+
+
+
+🧩 13. Software controleren
+🔍 Navigeren:
+Instellingen → Apps
+⚙️ Acties:
+Verwijder onbekende software
+Update programma’s
+
+
+
+🛡️ 14. Windows Defender
+🔍 Navigeren:
+Start → Windows Security
+⚙️ Acties:
+Ga naar: Virus & threat protection
+Zet:
+Real-time protection → ON
+
+
+
+🔑 15. SMBv1 uitschakelen
+🔍 Navigeren:
+Windows + R
+Typ: optionalfeatures
+⚙️ Acties:
+Zoek: SMB 1.0/CIFS File Sharing Support
+Vink UIT
+
+
+
+🧠 Belangrijk (examen hack)
+
+Als je iets niet weet, schrijf:
+
+👉 “Ik heb gecontroleerd via [tool] en dit aangepast via [pad] in Windows.”
+
+Bijv:
+
+“Ik heb de password policy gecontroleerd via secpol.msc en aangepast naar een minimale lengte van 12 tekens.”
+
+👉 Dit laat zien dat je weet hoe, en dat levert punten op.
