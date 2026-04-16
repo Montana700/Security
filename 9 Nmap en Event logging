@@ -1,0 +1,177 @@
+🔍 1. Nmap: wat je ermee checkt (W1 + W2)
+⚙️ Basis scan
+nmap <ip-adres>
+
+👉 Dit laat zien:
+
+Open poorten
+Welke services draaien
+⚙️ Meer detail (belangrijk voor examen)
+nmap -sV -sC <ip>
+
+👉 Dit laat zien:
+
+Service versies (heel belangrijk!)
+Mogelijke standaard scripts checks
+⚙️ Wat je zoekt (kwetsbaarheden)
+🔓 Open poorten
+
+Voorbeeld:
+
+21 = FTP (vaak onveilig)
+23 = Telnet (heel onveilig)
+3389 = RDP (remote access)
+445 = SMB (Windows file sharing)
+
+👉 Waarom gevaarlijk:
+
+Hoe meer open poorten → hoe meer aanvalsvlak
+
+👉 Wat je zegt:
+
+“Er zijn onnodige open poorten gevonden, wat het aanvalsvlak vergroot.”
+
+🧠 Oude versies (belangrijk!)
+
+Bijv:
+
+Apache 2.2
+OpenSSH oud
+SMBv1
+
+👉 Waarom gevaarlijk:
+
+Bekende exploits werken nog
+
+👉 Wat je zegt:
+
+“De service draait een verouderde versie die kwetsbaar kan zijn voor bekende exploits.”
+
+⚠️ Belangrijk:
+
+👉 Nmap zegt NIET direct “dit is CVE-12345”
+👉 Jij moet zelf concluderen: “oud = risico”
+
+
+
+
+📜 2. Event Viewer (Windows logs)
+⚙️ Openen:
+Windows + R → eventvwr
+📍 Belangrijkste logs:
+🔴 Security log
+
+→ Login attempts
+
+🟡 System log
+
+→ Services / systeemfouten
+
+🚨 Belangrijke Event IDs (DIT MOET JE KENNEN)
+🔐 Login / security events
+Event ID	Betekenis
+4624	Succesvolle login
+4625	Failed login
+4634	Logout
+4648	Login met expliciete credentials
+4672	Admin login
+🧠 Wat betekent dit in examen?
+🔴 Voorbeeld: vreemde IP login
+
+Je ziet:
+
+Event ID: 4624
+Logon Type: 10 (Remote Desktop)
+IP: onbekend (bijv. 185.x.x.x)
+
+👉 Betekenis:
+
+Er is succesvol ingelogd via RDP vanaf een onbekend IP-adres.
+
+❗ Wat je dan zegt in je rapport:
+
+“Er is een succesvolle inlogpoging gevonden (Event ID 4624) vanaf een onbekend IP-adres. Dit kan duiden op ongeautoriseerde toegang. Het account is gecontroleerd en beveiligingsmaatregelen zijn aangescherpt.”
+
+🚨 Failed logins (brute force)
+
+Je ziet:
+
+Event ID: 4625 veel keren
+
+👉 Betekenis:
+
+Iemand probeert wachtwoorden te raden
+
+👉 Wat je zegt:
+
+“Er zijn meerdere mislukte inlogpogingen gedetecteerd, mogelijk brute force aanval.”
+
+
+
+
+🌐 3. “Andere IP ingelogd” herkennen
+🔍 Waar kijk je?
+
+Event Viewer → Security → 4624 → details:
+
+Je ziet:
+
+IP Address
+Logon Type
+📌 Belangrijke logon types:
+Type	Betekenis
+2	Lokale login
+3	Network share
+10	Remote Desktop (RDP)
+🚨 Verdacht voorbeeld:
+Event ID: 4624
+Logon Type: 10
+IP: onbekend extern IP
+
+👉 Conclusie:
+
+Mogelijke ongeautoriseerde remote login
+
+🧠 BELANGRIJK: wat docenten willen zien
+
+Ze willen NIET:
+
+❌ “Event ID 4624 is gevaarlijk”
+
+Ze willen WEL:
+
+✔ Je ziet het event
+✔ Je begrijpt het
+✔ Je legt risico uit
+✔ Je koppelt oplossing
+
+
+
+
+🔧 4. Wat doe je bij verdachte login?
+⚙️ Acties:
+Account locken:
+net user username /active:no
+Wachtwoord resetten
+RDP uitschakelen of beperken
+Firewall IP blokkeren
+
+
+
+🧠 5. EXAMEN DENKWIJZE (heel belangrijk)
+
+
+🔍 Stap 1: Wat zie ik?
+login
+IP
+poort
+service
+
+
+⚠️ Stap 2: Is dit normaal?
+bekende user? ok
+onbekend IP? verdacht
+🔧 Stap 3: Fix
+account lock
+firewall
+password reset
