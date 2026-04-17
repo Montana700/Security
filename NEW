@@ -1,0 +1,143 @@
+2.1 Risicoanalyse (voorbeeld uitwerking)
+Overzicht kwetsbaarheden (geprioriteerd)
+Hoge prioriteit
+SQL Injection
+Aanvallers kunnen database uitlezen of aanpassen
+Risico: datalek (persoonsgegevens), volledige databasecompromittering
+Standaard inloggegevens (root/toor)
+Directe toegang tot admin-account
+Risico: volledige controle over website
+Geen HTTPS (onversleutelde verbinding)
+Gegevens worden in plain text verstuurd
+Risico: onderschepping van wachtwoorden (MITM-aanval)
+Onvoldoende inputvalidatie
+Kan leiden tot XSS of command injection
+Risico: uitvoeren van kwaadaardige scripts
+Middelhoge prioriteit
+Verouderde software / CMS
+Bekende exploits beschikbaar
+Risico: misbruik door bekende kwetsbaarheden
+Geen rate limiting / brute force beveiliging
+Aanvallers kunnen wachtwoorden raden
+Risico: account overname
+Lage prioriteit
+Onveilige foutmeldingen (error messages)
+Geeft systeeminformatie prijs
+Risico: helpt aanvaller bij verkennen
+Directory listing aan
+Bestanden zichtbaar
+Risico: informatielek
+Prioriteiten per onderdeel
+Webserver (hoog → laag)
+HTTPS ontbreekt → hoog
+Verouderde software → middel
+Directory listing → laag
+Website / applicatie
+SQL Injection → hoog
+Standaard login → hoog
+Inputvalidatie → hoog
+Geen brute force beveiliging → middel
+Foutmeldingen → laag
+2.2 Kwetsbaarheden oplossen (voorbeeld)
+Hier zijn 5 concrete oplossingen die je bijna altijd kunt gebruiken:
+1. SQL Injection oplossen
+Oplossing:
+Gebruik prepared statements (bijv. in PHP PDO)
+PHP
+$stmt = $pdo->prepare("SELECT * FROM users WHERE username = ?");
+$stmt->execute([$username]);
+Test:
+Probeer ' OR '1'='1 → werkt niet meer ✅
+2. Standaard wachtwoord wijzigen
+Oplossing:
+Verander root/toor naar sterk wachtwoord
+Voeg wachtwoordbeleid toe (min 12 tekens, complex)
+3. HTTPS inschakelen
+Oplossing:
+Installeer SSL certificaat (bijv. Let’s Encrypt)
+Forceer HTTPS in config:
+Apache
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI}
+Test:
+Site opent alleen via https ✅
+4. Inputvalidatie
+Oplossing:
+Gebruik filtering:
+PHP
+$username = htmlspecialchars($_POST['username']);
+Test:
+<script>alert(1)</script> wordt niet uitgevoerd ✅
+5. Brute force bescherming
+Oplossing:
+Login attempts limiteren
+Bijvoorbeeld:
+max 5 pogingen
+tijdelijke blokkade
+Screenshots (wat moet je laten zien)
+Voor/na login
+HTTPS slotje
+SQL injection test
+Configuratiebestand
+Foutmelding vóór/na
+2.3 Communicatie
+E-mail naar gebruikers (AVG-proof)
+Email
+Subject
+Belangrijke melding: datalek op onze website
+Geachte gebruiker,
+Wij informeren u hierbij over een beveiligingsincident dat heeft plaatsgevonden op onze website.
+Op [datum] hebben wij vastgesteld dat onbevoegden mogelijk toegang hebben gehad tot persoonsgegevens. Het betreft mogelijk de volgende gegevens:
+Naam
+E-mailadres
+Gebruikersnaam
+Wij hebben direct maatregelen genomen om de kwetsbaarheid te verhelpen en verdere schade te voorkomen.
+Wat kunt u doen?
+Wij adviseren u om uw wachtwoord direct te wijzigen
+Gebruik niet hetzelfde wachtwoord op meerdere websites
+Wij hebben dit incident gemeld bij de Autoriteit Persoonsgegevens, conform de AVG-regelgeving.
+Voor vragen kunt u contact opnemen via: [e-mailadres organisatie]
+Onze excuses voor het ongemak.
+Met vriendelijke groet,
+[Bedrijfsnaam]
+E-mail naar hostingbedrijf
+Email
+Subject
+Beveiligingsincident en genomen maatregelen
+Geachte heer/mevrouw,
+Hierbij informeren wij u over een beveiligingsincident op onze webserver.
+Wij hebben de volgende kwetsbaarheden geïdentificeerd en opgelost:
+SQL Injection
+Onveilige login (standaard wachtwoord)
+Geen HTTPS
+Onvoldoende inputvalidatie
+Geen brute force bescherming
+De volgende maatregelen zijn genomen:
+Implementatie van prepared statements
+SSL-certificaat geïnstalleerd
+Wachtwoorden aangepast
+Extra beveiligingsmaatregelen ingesteld
+Wij verzoeken u om aanvullende server-side controles uit te voeren en ons te informeren over verdere aanbevelingen.
+Met vriendelijke groet,
+[Naam]
+[Bedrijf]
+Logboek (voorbeeld invulling)
+Dag 1
+Webserver gestart
+Website getest
+Kwetsbaarheden geïdentificeerd
+Dag 2
+SQL injection opgelost
+HTTPS geïnstalleerd
+Login beveiligd
+Dag 3
+Tests uitgevoerd
+Screenshots gemaakt
+Documentatie afgerond
+Extra tip (belangrijk voor je examen)
+Docenten letten vooral op:
+Of je prioriteiten logisch zijn
+Of je maatregelen concreet zijn
+Of je AVG correct toepast
+Of je testresultaten beschrijft
